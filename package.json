@@ -1,0 +1,22 @@
+{
+	"name": "tss",
+	"version": "0.0.2",
+	"author": "Noferi Mickaël <noferov@gmail.com>",
+	"description": "a minimal template engine",
+	"license":[{
+		"type":"CC BY-NC-SA 3.0",
+		"url":"http://creativecommons.org/licenses/by-nc-sa/3.0/"
+	}],	"main": "tss.js",
+	"keywords": [
+		"template",
+		"minimal",
+		"simple"
+	],
+	"dependencies": {
+		"async":"caolan/async",
+		"async-replace":"kesla/async-replace"
+	},
+	"engines": {
+		"node": "*"
+	}
+}
