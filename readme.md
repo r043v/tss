@@ -48,7 +48,7 @@ will result in :
 		<li>kate</li>
 	</ul>
 
-callback can be an object with some function, or a "generic" single function, "this" in callback will always will refer to the data object
+callback can be an object with some function, or a "generic" single function, "this" in callback will always refer to the data object
 
 callback object example :
 
@@ -122,7 +122,7 @@ extract all handler and templates into dedicated data object for maximum reuse a
 			}
 		}
 	};
-	
+
 	var html = tss(template.user.userpage,user,{
 		name:handler.user.name,
 		email:handler.user.mail
@@ -133,7 +133,7 @@ or directly :
 	var html = tss(template.user.userpage,user,handler.user);
 
 	
-**async ftw**
+**async**
 	
 default tss use is sync, but it can be used in an async way,
 for that purpose it will require [async] and [async-replace] npm packages
@@ -184,7 +184,7 @@ you can mix async && sync data callback :
 		},
 		time : function(done){
 			db.get("users:last-ping:"+this.login,function(err,time){
-				time -= new Date(); // from now
+				time = (new Date()) - time; // from now
 				time /= 1000*3600*24; // in day
 				if(time > 90) return done(null, "from death");
 				var timeString = (time > 7)?"after so long time !":"so fast.";
